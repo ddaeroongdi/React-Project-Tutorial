@@ -26,6 +26,7 @@ const multer =require('multer');
 const upload = multer({dest:'./upload'});
 
 app.get('/api/customers', (req, res) => {
+  //rows = 배열, fields = 컬럼
     connection.query(
       "SELECT * FROM CUSTOMER WHERE isDeleted = 0",
       (err, rows, fields) => {

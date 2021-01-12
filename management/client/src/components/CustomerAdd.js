@@ -29,11 +29,12 @@ class CustomerAdd extends React.Component{
         }
     }
 
+    //비동기기때문에 서버에서 새로 데이터를 받았을 때(응답을 받고 난 후) 리로드해줘야함.
     handleForSubmit = (e) => {
         e.preventDefault()
         this.addCustomer().then((response) => {
             console.log(response.data);
-            this.props.stateRefresh(); //비동기기때문에 서버에서 새로 데이터를 받았을 때(응답을 받고 난 후) 리로드해줘야함.
+            this.props.stateRefresh(); 
         })
         //초기화
         this.setState({
